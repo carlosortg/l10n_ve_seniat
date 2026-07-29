@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_fiscal_book"
+              name="Libros fiscales"
+              parent="account.menu_finance_reports"
+              action="action_fiscal_book_wizard"
+              sequence="50"/>
+</odoo>

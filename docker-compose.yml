@@ -15,7 +15,7 @@ services:
       retries: 15
 
   odoo:
-    build: .
+    image: odoo:19.0
     depends_on:
       db:
         condition: service_healthy
@@ -25,8 +25,10 @@ services:
       PASSWORD: ${POSTGRES_PASSWORD:-odoo}
     volumes:
       - odoo-web-data:/var/lib/odoo
-    ports:
-      - "8069:8069"
+      # Coolify clona el repo en el project directory; montamos los módulos
+      - .:/mnt/extra-addons/l10n_ve_seniat:ro
+    expose:
+      - "8069"
     restart: unless-stopped
     command: >
       odoo
