@@ -1,0 +1,20 @@
+{
+    "name": "Venezuela - Factura Fiscal y N° de Control",
+    "version": "19.0.1.4.0",
+    "category": "Accounting/Localizations",
+    "summary": "Número de control, secuencias SENIAT, NC/ND origen, PDF fiscal",
+    "author": "Partner Oficial Odoo Venezuela",
+    "license": "LGPL-3",
+    "depends": ["account", "l10n_ve_base", "l10n_ve_account"],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/ir_sequence_data.xml",
+        "views/account_journal_views.xml",
+        "views/account_move_views.xml",
+        "views/res_company_views.xml",
+        "views/res_config_settings_views.xml",
+        "report/report_invoice_fiscal.xml",
+    ],
+    "installable": True,
+    "application": False,
+}
