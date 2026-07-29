@@ -1,57 +1,40 @@
 # Localización Venezolana para Odoo 19 — SENIAT
 
-Localización fiscal completa orientada al cumplimiento y a la **homologación ante el SENIAT** (Providencia Administrativa SNAT/2024/000121).
+Localización fiscal orientada a **cumplimiento y homologación SENIAT** (Providencia SNAT/2024/000121).
+
+**Versión actual: 19.0.1.1.0**
 
 ## Módulos
 
-| Módulo | Descripción | Estado |
-|--------|-------------|--------|
-| `l10n_ve_base` | RIF, tipo contribuyente, estados VE, campos fiscales | ✅ |
-| `l10n_ve_account` | IVA 16/8/31/0%, posiciones fiscales, cuentas retenciones | ✅ |
-| `l10n_ve_withholding` | Motor genérico de retenciones + secuencias + inalterabilidad | ✅ |
-| `l10n_ve_withholding_iva` | Retención IVA 75%/100%, comprobantes, asiento | ✅ |
-| `l10n_ve_withholding_islr` | Conceptos ISLR, UT, retención, comprobantes | ✅ |
-| `l10n_ve_igtf` | IGTF sobre pagos en divisas | ✅ |
-| `l10n_ve_invoice` | N° control, secuencias SENIAT, PDF factura fiscal | ✅ |
-| `l10n_ve_fiscal_book` | Libro de compras y ventas + PDF | ✅ |
-| `l10n_ve_reports` | Exportación TXT declaraciones IVA / ISLR | ✅ |
+| Módulo | Descripción |
+|--------|-------------|
+| `l10n_ve_base` | RIF (dígito verificador), contribuyente, wizard config SENIAT |
+| `l10n_ve_account` | IVA 16/8/31/0%, posiciones fiscales |
+| `l10n_ve_withholding` | Motor de retenciones + inalterabilidad |
+| `l10n_ve_withholding_iva` | Retención IVA 75%/100% |
+| `l10n_ve_withholding_islr` | Conceptos ISLR + UT |
+| `l10n_ve_igtf` | IGTF en pagos en divisas |
+| `l10n_ve_invoice` | N° control, secuencias, NC/ND con documento origen, PDF |
+| `l10n_ve_fiscal_book` | Libros compras/ventas multi-alícuota + PDF |
+| `l10n_ve_reports` | Export TXT declaraciones |
 
-## Requisitos
+## Documentación
 
-- **Odoo 19.0**
-- Módulos: `account`, `purchase` (para flujos de compra)
-- País de la compañía: Venezuela
+- [MANUAL_DE_USO.md](MANUAL_DE_USO.md) — operación completa
+- [MEJORAS_PROPUESTAS.md](MEJORAS_PROPUESTAS.md) — roadmap P0–P3
+- [MATRIZ_PROVIDENCIA_121.md](MATRIZ_PROVIDENCIA_121.md) — requisitos ↔ implementación
+- [CHANGELOG.md](CHANGELOG.md)
 
 ## Instalación
 
 ```text
-# Añadir al addons_path y actualizar apps
-# Orden sugerido:
 l10n_ve_base → l10n_ve_account → l10n_ve_withholding →
 l10n_ve_withholding_iva → l10n_ve_withholding_islr →
 l10n_ve_igtf → l10n_ve_invoice → l10n_ve_fiscal_book → l10n_ve_reports
 ```
 
-Ver **[MANUAL_DE_USO.md](MANUAL_DE_USO.md)** para configuración y operación completa.
-Ver **[MEJORAS_PROPUESTAS.md](MEJORAS_PROPUESTAS.md)** para el roadmap de maximización.
-
-## Homologación SENIAT (Providencia 121)
-
-La localización contempla:
-
-- Integridad y trazabilidad de registros
-- Número de control correlativo (`no_gap`)
-- Correcciones solo mediante NC/ND
-- Timestamps de emisión / confirmación
-- Retenciones de IVA e ISLR
-- Exportación de archivos para declaración
-
-La homologación la solicita el **partner domiciliado en Venezuela** sobre una **versión concreta** del software.
+Luego: **Contabilidad → Configuración → Configuración inicial SENIAT**
 
 ## Licencia
 
 LGPL-3
-
-## Autor
-
-Partner Oficial Odoo Venezuela
