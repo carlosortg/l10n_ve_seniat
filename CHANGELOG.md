@@ -1,17 +1,17 @@
 # Changelog
 
-## 19.0.1.1.0
+## 19.0.1.2.0
 
 ### Added
-- Validación de dígito verificador RIF (algoritmo módulo 11)
-- Asistente de configuración inicial SENIAT (wizard)
-- Documento origen en NC/ND (`l10n_ve_origin_move_id`)
-- Desglose multi-alícuota en libros fiscales (16/8/31/exento)
-- Matriz Providencia 121 ↔ funcionalidad
+- PDF **Comprobante de Retención VE** (IVA/ISLR)
+- Wizard **Generar retenciones IVA del período**
+- Export TXT: separador configurable, encabezado opcional, RIF normalizado
+- Tests RIF (`tests/test_rif.py` + `scripts/test_rif_algorithm.py`)
 
-### Changed
-- Versionado de módulos a 19.0.1.1.0
+## 19.0.1.1.0
+
+- Dígito verificador RIF, wizard config SENIAT, NC/ND origen, multi-alícuota, matriz 121
 
 ## 19.0.1.0.0
 
-- Release inicial: 9 módulos (base, account, withholding, IVA, ISLR, IGTF, invoice, fiscal_book, reports)
+- Release inicial: 9 módulos

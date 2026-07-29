@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_withholding_certificate" model="ir.actions.report">
+        <field name="name">Comprobante de Retención VE</field>
+        <field name="model">account.withholding</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_ve_withholding.report_withholding_certificate_document</field>
+        <field name="report_file">l10n_ve_withholding.report_withholding_certificate_document</field>
+        <field name="print_report_name">'Comprobante_Retencion_%s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_account_withholding"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_withholding_certificate_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h3 class="text-center">COMPROBANTE DE RETENCIÓN</h3>
+                        <p class="text-center"><strong>N° <span t-field="o.name"/></strong></p>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <strong>Agente de retención</strong><br/>
+                                <span t-esc="o.company_id.name"/><br/>
+                                RIF: <span t-esc="o.company_id.l10n_ve_rif or o.company_id.vat or ''"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Sujeto retenido</strong><br/>
+                                <span t-field="o.partner_id"/><br/>
+                                RIF: <span t-esc="o.partner_id.l10n_ve_rif or o.partner_id.vat or ''"/><br/>
+                                Fecha: <span t-field="o.date"/>
+                            </div>
+                        </div>
+                        <table class="table table-sm table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th><th>Factura</th><th>Control</th><th>Concepto</th>
+                                    <th class="text-end">Base</th><th class="text-end">%</th>
+                                    <th class="text-end">Impuesto</th><th class="text-end">Retenido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="line">
+                                    <td><span t-field="line.invoice_date"/></td>
+                                    <td><span t-field="line.invoice_number"/></td>
+                                    <td><span t-field="line.control_number"/></td>
+                                    <td><span t-field="line.concept"/></td>
+                                    <td class="text-end"><span t-field="line.amount_base"/></td>
+                                    <td class="text-end"><span t-field="line.percentage"/></td>
+                                    <td class="text-end"><span t-field="line.amount_tax"/></td>
+                                    <td class="text-end"><span t-field="line.amount_withheld"/></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" class="text-end"><strong>Total retenido</strong></td>
+                                    <td colspan="4" class="text-end"><strong><span t-field="o.amount_withheld"/></strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
