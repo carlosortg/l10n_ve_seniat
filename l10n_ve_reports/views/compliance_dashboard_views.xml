@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_compliance_dashboard_form" model="ir.ui.view">
+        <field name="name">l10n.ve.compliance.dashboard.form</field>
+        <field name="model">l10n.ve.compliance.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Cumplimiento fiscal VE">
+                <sheet>
+                    <h1>Dashboard cumplimiento SENIAT</h1>
+                    <group>
+                        <field name="date_from"/><field name="date_to"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                    <group string="Facturación">
+                        <field name="sale_invoices"/>
+                        <field name="sale_without_control"/>
+                        <field name="purchase_invoices"/>
+                    </group>
+                    <group string="Retenciones IVA">
+                        <field name="iva_withholdings_draft"/>
+                        <field name="iva_withholdings_confirmed"/>
+                        <field name="iva_withholdings_declared"/>
+                        <field name="amount_iva_withheld"/>
+                    </group>
+                    <group string="Retenciones ISLR">
+                        <field name="islr_withholdings_draft"/>
+                        <field name="islr_withholdings_confirmed"/>
+                        <field name="islr_withholdings_declared"/>
+                        <field name="amount_islr_withheld"/>
+                    </group>
+                    <group string="Alertas">
+                        <field name="partners_without_rif"/>
+                        <field name="notes" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_refresh" string="Actualizar indicadores" type="object" class="btn-primary"/>
+                    <button string="Cerrar" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_compliance_dashboard" model="ir.actions.act_window">
+        <field name="name">Cumplimiento fiscal VE</field>
+        <field name="res_model">l10n.ve.compliance.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+</odoo>

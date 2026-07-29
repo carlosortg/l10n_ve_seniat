@@ -1,16 +1,19 @@
 # Changelog
 
-## 19.0.1.3.0
+## 19.0.1.4.0
 
 ### Added
-- Export **XML ISLR** (`RelacionRetencionesISLR`)
-- Grupo **SENIAT / Consulta fiscal** (solo lectura)
-- Campos **retenciones sufridas** en facturas de venta
-- GitHub Actions CI: compileall + test RIF + manifests
+- **Dashboard cumplimiento fiscal VE** (KPIs del período + alertas)
+- Asiento contable de **retenciones sufridas** (botón en factura de venta)
+- Campo enlace al asiento de retención sufrida
+
+## 19.0.1.3.0
+
+- XML ISLR, rol consulta SENIAT, campos retenciones sufridas, CI
 
 ## 19.0.1.2.0
 
-- PDF comprobante retención, wizard masivo IVA, TXT configurable, tests RIF
+- PDF retención, wizard masivo IVA, TXT configurable, tests RIF
 
 ## 19.0.1.1.0
 
