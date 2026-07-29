@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Odoo
+*.pyc
+*.pyo
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Local / secrets
+*.log
+.env
+.venv/
+venv/
+
+# Test databases / filestore
+filestore/
+*.sql
+*.dump
