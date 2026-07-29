@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-odoo}
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+
+  odoo:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: ${POSTGRES_PASSWORD:-odoo}
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+    ports:
+      - "8069:8069"
+    restart: unless-stopped
+    command: >
+      odoo
+      --db_host=db
+      --db_user=odoo
+      --db_password=${POSTGRES_PASSWORD:-odoo}
+      --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons/l10n_ve_seniat
+      --proxy-mode
+      --without-demo=False
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:
