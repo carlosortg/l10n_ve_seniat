@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  syntax-and-rif:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile all Python modules
+        run: |
+          python -m compileall -q l10n_ve_base l10n_ve_account l10n_ve_withholding \
+            l10n_ve_withholding_iva l10n_ve_withholding_islr l10n_ve_igtf \
+            l10n_ve_invoice l10n_ve_fiscal_book l10n_ve_reports
+          echo "compileall OK"
+
+      - name: RIF algorithm unit test
+        run: python scripts/test_rif_algorithm.py
+
+      - name: Check manifests exist
+        run: |
+          for m in l10n_ve_base l10n_ve_account l10n_ve_withholding \
+                   l10n_ve_withholding_iva l10n_ve_withholding_islr \
+                   l10n_ve_igtf l10n_ve_invoice l10n_ve_fiscal_book l10n_ve_reports; do
+            test -f "$m/__manifest__.py" || (echo "missing $m" && exit 1)
+          done
+          echo "manifests OK"

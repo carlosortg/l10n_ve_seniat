@@ -1,17 +1,21 @@
 # Changelog
 
-## 19.0.1.2.0
+## 19.0.1.3.0
 
 ### Added
-- PDF **Comprobante de Retención VE** (IVA/ISLR)
-- Wizard **Generar retenciones IVA del período**
-- Export TXT: separador configurable, encabezado opcional, RIF normalizado
-- Tests RIF (`tests/test_rif.py` + `scripts/test_rif_algorithm.py`)
+- Export **XML ISLR** (`RelacionRetencionesISLR`)
+- Grupo **SENIAT / Consulta fiscal** (solo lectura)
+- Campos **retenciones sufridas** en facturas de venta
+- GitHub Actions CI: compileall + test RIF + manifests
+
+## 19.0.1.2.0
+
+- PDF comprobante retención, wizard masivo IVA, TXT configurable, tests RIF
 
 ## 19.0.1.1.0
 
-- Dígito verificador RIF, wizard config SENIAT, NC/ND origen, multi-alícuota, matriz 121
+- Dígito RIF, wizard config, NC/ND origen, multi-alícuota, matriz 121
 
 ## 19.0.1.0.0
 
-- Release inicial: 9 módulos
+- Release inicial 9 módulos
