@@ -2,20 +2,20 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: postgres
+      POSTGRES_DB: odoo
       POSTGRES_USER: odoo
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-odoo}
     volumes:
       - odoo-db-data:/var/lib/postgresql/data
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      test: ["CMD-SHELL", "pg_isready -U odoo -d odoo"]
       interval: 5s
       timeout: 5s
       retries: 15
 
   odoo:
-    image: odoo:19.0
+    build: .
     depends_on:
       db:
         condition: service_healthy
@@ -25,8 +25,6 @@ services:
       PASSWORD: ${POSTGRES_PASSWORD:-odoo}
     volumes:
       - odoo-web-data:/var/lib/odoo
-      # Coolify clona el repo en el project directory; montamos los módulos
-      - .:/mnt/extra-addons/l10n_ve_seniat:ro
     expose:
       - "8069"
     restart: unless-stopped
@@ -35,7 +33,7 @@ services:
       --db_host=db
       --db_user=odoo
       --db_password=${POSTGRES_PASSWORD:-odoo}
-      --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons/l10n_ve_seniat
+      --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/enterprise,/mnt/extra-addons/l10n_ve_seniat
       --proxy-mode
       --without-demo=False
 
