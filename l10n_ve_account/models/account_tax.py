@@ -7,23 +7,19 @@ class AccountTax(models.Model):
 
     l10n_ve_withholding_type = fields.Selection(
         selection=[
-            ("none", "No es retención"),
-            ("iva", "Retención de IVA"),
-            ("islr", "Retención de ISLR"),
-            ("municipal", "Retención Municipal"),
-            ("igtf", "IGTF"),
+            ("none", "No aplica retencion"),
+            ("iva", "Retencion IVA"),
+            ("islr", "Retencion ISLR"),
         ],
-        string="Tipo de Retención VE",
+        string="Tipo retencion VE",
         default="none",
     )
-    l10n_ve_aliquot = fields.Selection(
+    l10n_ve_iva_aliquot = fields.Selection(
         selection=[
             ("general", "General 16%"),
             ("reduced", "Reducida 8%"),
-            ("luxury", "Lujo 31%"),
+            ("additional", "Adicional 31%"),
             ("exempt", "Exento 0%"),
-            ("export", "Exportación 0%"),
-            ("not_subject", "No sujeto"),
         ],
-        string="Alícuota IVA VE",
+        string="Alicuota IVA VE",
     )
