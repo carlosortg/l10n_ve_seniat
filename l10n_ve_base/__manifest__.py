@@ -2,7 +2,7 @@
     "name": "Venezuela - Base",
     "version": "19.0.1.1.0",
     "category": "Accounting/Localizations",
-    "summary": "RIF con dígito verificador, tipo contribuyente, wizard config SENIAT",
+    "summary": "RIF, tipo contribuyente y base fiscal Venezuela / SENIAT",
     "author": "Partner Oficial Odoo Venezuela",
     "license": "LGPL-3",
     "depends": ["base", "account"],
@@ -15,5 +15,4 @@
     ],
     "installable": True,
     "application": False,
-    "auto_install": False,
 }
