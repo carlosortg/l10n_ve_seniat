@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mass_wh_wizard_user,mass.wh.wizard.user,model_l10n_ve_mass_withholding_wizard,account.group_account_invoice,1,1,1,1

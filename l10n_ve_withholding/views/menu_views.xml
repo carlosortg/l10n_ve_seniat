@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_l10n_ve_withholding_root" name="Retenciones VE"
+              parent="account.menu_finance" sequence="40"/>
+    <menuitem id="menu_account_withholding" name="Comprobantes de retencion"
+              parent="menu_l10n_ve_withholding_root"
+              action="action_account_withholding" sequence="10"/>
+</odoo>

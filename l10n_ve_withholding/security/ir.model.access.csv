@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_withholding_user,account.withholding.user,model_account_withholding,account.group_account_invoice,1,1,1,0
+access_account_withholding_manager,account.withholding.manager,model_account_withholding,account.group_account_manager,1,1,1,1
+access_account_withholding_line_user,account.withholding.line.user,model_account_withholding_line,account.group_account_invoice,1,1,1,0
+access_account_withholding_line_manager,account.withholding.line.manager,model_account_withholding_line,account.group_account_manager,1,1,1,1
+access_account_withholding_consulta,account.withholding.consulta,model_account_withholding,l10n_ve_withholding.group_seniat_consulta,1,0,0,0

@@ -1,8 +1,8 @@
 {
-    "name": "Venezuela - Retención de IVA",
-    "version": "19.0.1.4.0",
+    "name": "Venezuela - Retencion de IVA",
+    "version": "19.0.1.0.0",
     "category": "Accounting/Localizations",
-    "summary": "Retención IVA 75%/100%, comprobantes, wizard masivo",
+    "summary": "Retencion IVA 75%/100% y wizard masivo",
     "author": "Partner Oficial Odoo Venezuela",
     "license": "LGPL-3",
     "depends": ["l10n_ve_withholding"],

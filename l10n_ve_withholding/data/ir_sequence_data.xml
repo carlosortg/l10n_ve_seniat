@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_withholding_iva" model="ir.sequence">
+        <field name="name">Comprobante retencion IVA</field>
+        <field name="code">l10n.ve.withholding.iva</field>
+        <field name="prefix">RET-IVA/%(year)s/</field>
+        <field name="padding">6</field>
+        <field name="implementation">no_gap</field>
+        <field name="company_id" eval="False"/>
+    </record>
+    <record id="seq_withholding_islr" model="ir.sequence">
+        <field name="name">Comprobante retencion ISLR</field>
+        <field name="code">l10n.ve.withholding.islr</field>
+        <field name="prefix">RET-ISLR/%(year)s/</field>
+        <field name="padding">6</field>
+        <field name="implementation">no_gap</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>
