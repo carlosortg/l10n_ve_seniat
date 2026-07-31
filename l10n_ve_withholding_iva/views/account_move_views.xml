@@ -5,6 +5,13 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_l10n_ve_create_iva_withholding"
+                        type="object"
+                        string="Retencion IVA"
+                        class="btn-secondary"
+                        invisible="state != 'posted' or move_type not in ('in_invoice', 'in_refund')"/>
+            </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="l10n_ve_iva_withholding_rate"
                        invisible="move_type not in ('in_invoice', 'in_refund')"/>

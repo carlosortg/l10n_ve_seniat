@@ -9,17 +9,52 @@
         <field name="binding_model_id" ref="model_account_withholding"/>
         <field name="binding_type">report</field>
     </record>
+
     <template id="report_withholding_document">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>Comprobante de retencion <span t-field="o.withholding_type"/></h2>
-                        <p><strong>Numero:</strong> <span t-field="o.name"/></p>
-                        <p><strong>Fecha:</strong> <span t-field="o.date"/></p>
-                        <p><strong>Sujeto:</strong> <span t-field="o.partner_id"/></p>
-                        <p><strong>Base:</strong> <span t-field="o.amount_base"/></p>
-                        <p><strong>Retenido:</strong> <span t-field="o.amount_withheld"/></p>
+                        <h2 class="text-center">Comprobante de retencion de <span t-field="o.withholding_type"/></h2>
+                        <div class="row mt16 mb16">
+                            <div class="col-6">
+                                <strong>Agente de retencion</strong><br/>
+                                <span t-field="o.company_id.partner_id.name"/><br/>
+                                RIF: <span t-field="o.company_id.l10n_ve_rif"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Sujeto retenido</strong><br/>
+                                <span t-field="o.partner_id"/><br/>
+                                RIF: <span t-field="o.partner_rif"/>
+                            </div>
+                        </div>
+                        <p>
+                            <strong>N comprobante:</strong> <span t-field="o.name"/><br/>
+                            <strong>Fecha:</strong> <span t-field="o.date"/><br/>
+                            <strong>Base / IVA:</strong> <span t-field="o.amount_base"/><br/>
+                            <strong>%:</strong> <span t-field="o.rate"/><br/>
+                            <strong>Monto retenido:</strong> <span t-field="o.amount_withheld"/>
+                        </p>
+                        <table class="table table-sm o_main_table" t-if="o.line_ids">
+                            <thead>
+                                <tr>
+                                    <th>Factura</th>
+                                    <th>N control</th>
+                                    <th class="text-end">Base</th>
+                                    <th class="text-end">%</th>
+                                    <th class="text-end">Retenido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="line">
+                                    <td><span t-field="line.invoice_id.name"/></td>
+                                    <td><span t-field="line.invoice_control_number"/></td>
+                                    <td class="text-end"><span t-field="line.amount_base"/></td>
+                                    <td class="text-end"><span t-field="line.rate"/></td>
+                                    <td class="text-end"><span t-field="line.amount_withheld"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </t>
             </t>

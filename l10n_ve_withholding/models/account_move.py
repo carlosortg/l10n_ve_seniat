@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo import fields, models, _
 
 
 class AccountMove(models.Model):
@@ -15,10 +14,16 @@ class AccountMove(models.Model):
         copy=False,
     )
     l10n_ve_withholding_count = fields.Integer(compute="_compute_l10n_ve_withholding_count")
-    l10n_ve_suffered_iva = fields.Monetary(string="Retencion IVA sufrida", currency_field="currency_id", copy=False)
-    l10n_ve_suffered_islr = fields.Monetary(string="Retencion ISLR sufrida", currency_field="currency_id", copy=False)
+    l10n_ve_suffered_iva = fields.Monetary(
+        string="Retencion IVA sufrida", currency_field="currency_id", copy=False,
+    )
+    l10n_ve_suffered_islr = fields.Monetary(
+        string="Retencion ISLR sufrida", currency_field="currency_id", copy=False,
+    )
     l10n_ve_suffered_voucher = fields.Char(string="N comprobante retencion sufrida", copy=False)
-    l10n_ve_suffered_move_id = fields.Many2one("account.move", string="Asiento retencion sufrida", copy=False, readonly=True)
+    l10n_ve_suffered_move_id = fields.Many2one(
+        "account.move", string="Asiento retencion sufrida", copy=False, readonly=True,
+    )
 
     def _compute_l10n_ve_withholding_count(self):
         for move in self:
@@ -33,3 +38,9 @@ class AccountMove(models.Model):
             "view_mode": "list,form",
             "domain": [("id", "in", self.l10n_ve_withholding_ids.ids)],
         }
+
+    def _l10n_ve_get_tax_amount(self):
+        """Suma del IVA (tax lines) de la factura en valor absoluto."""
+        self.ensure_one()
+        tax_lines = self.line_ids.filtered(lambda l: l.tax_line_id)
+        return abs(sum(tax_lines.mapped("balance")))
