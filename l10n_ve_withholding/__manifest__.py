@@ -1,14 +1,14 @@
 {
     "name": "Venezuela - Motor de Retenciones",
-    "version": "19.0.1.3.0",
+    "version": "19.0.1.3.1",
     "category": "Accounting/Localizations",
     "summary": "Motor generico de retenciones fiscales Venezuela (SENIAT)",
     "author": "Partner Oficial Odoo Venezuela",
     "license": "LGPL-3",
     "depends": ["account", "l10n_ve_base", "l10n_ve_account"],
     "data": [
-        "security/ir.model.access.csv",
         "security/seniat_groups.xml",
+        "security/ir.model.access.csv",
         "security/security.xml",
         "data/ir_sequence_data.xml",
         "views/account_withholding_views.xml",

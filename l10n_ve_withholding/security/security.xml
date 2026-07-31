@@ -4,5 +4,6 @@
         <field name="name">Retenciones multi-compania</field>
         <field name="model_id" ref="model_account_withholding"/>
         <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('account.group_account_invoice')), (4, ref('account.group_account_manager')), (4, ref('l10n_ve_withholding.group_seniat_consulta'))]"/>
     </record>
 </odoo>

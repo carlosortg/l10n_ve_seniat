@@ -4,3 +4,4 @@ access_account_withholding_manager,account.withholding.manager,model_account_wit
 access_account_withholding_line_user,account.withholding.line.user,model_account_withholding_line,account.group_account_invoice,1,1,1,0
 access_account_withholding_line_manager,account.withholding.line.manager,model_account_withholding_line,account.group_account_manager,1,1,1,1
 access_account_withholding_consulta,account.withholding.consulta,model_account_withholding,l10n_ve_withholding.group_seniat_consulta,1,0,0,0
+access_account_withholding_line_consulta,account.withholding.line.consulta,model_account_withholding_line,l10n_ve_withholding.group_seniat_consulta,1,0,0,0
