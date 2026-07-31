@@ -1,25 +1,25 @@
-id,country_id:id,name,code
-state_ve_amazonas,base.ve,Amazonas,AM
-state_ve_anzoategui,base.ve,Anzoátegui,AN
-state_ve_apure,base.ve,Apure,AP
-state_ve_aragua,base.ve,Aragua,AR
-state_ve_barinas,base.ve,Barinas,BA
-state_ve_bolivar,base.ve,Bolívar,BO
-state_ve_carabobo,base.ve,Carabobo,CA
-state_ve_cojedes,base.ve,Cojedes,CO
-state_ve_delta_amacuro,base.ve,Delta Amacuro,DA
-state_ve_dc,base.ve,Distrito Capital,DC
-state_ve_falcon,base.ve,Falcón,FA
-state_ve_guarico,base.ve,Guárico,GU
-state_ve_lara,base.ve,Lara,LA
-state_ve_merida,base.ve,Mérida,ME
-state_ve_miranda,base.ve,Miranda,MI
-state_ve_monagas,base.ve,Monagas,MO
-state_ve_nueva_esparta,base.ve,Nueva Esparta,NE
-state_ve_portuguesa,base.ve,Portuguesa,PO
-state_ve_sucre,base.ve,Sucre,SU
-state_ve_tachira,base.ve,Táchira,TA
-state_ve_trujillo,base.ve,Trujillo,TR
-state_ve_vargas,base.ve,La Guaira,LG
-state_ve_yaracuy,base.ve,Yaracuy,YA
-state_ve_zulia,base.ve,Zulia,ZU
+id,name,code,country_id:id
+state_ve_amazonas,Amazonas,AM,base.ve
+state_ve_anzoategui,Anzoategui,AN,base.ve
+state_ve_apure,Apure,AP,base.ve
+state_ve_aragua,Aragua,AR,base.ve
+state_ve_barinas,Barinas,BA,base.ve
+state_ve_bolivar,Bolivar,BO,base.ve
+state_ve_carabobo,Carabobo,CA,base.ve
+state_ve_cojedes,Cojedes,CO,base.ve
+state_ve_delta,Delta Amacuro,DA,base.ve
+state_ve_dc,Distrito Capital,DC,base.ve
+state_ve_falcon,Falcon,FA,base.ve
+state_ve_guarico,Guarico,GU,base.ve
+state_ve_lara,Lara,LA,base.ve
+state_ve_merida,Merida,ME,base.ve
+state_ve_miranda,Miranda,MI,base.ve
+state_ve_monagas,Monagas,MO,base.ve
+state_ve_ne,Nueva Esparta,NE,base.ve
+state_ve_portuguesa,Portuguesa,PO,base.ve
+state_ve_sucre,Sucre,SU,base.ve
+state_ve_tachira,Tachira,TA,base.ve
+state_ve_trujillo,Trujillo,TR,base.ve
+state_ve_vargas,La Guaira,LG,base.ve
+state_ve_yaracuy,Yaracuy,YA,base.ve
+state_ve_zulia,Zulia,ZU,base.ve
