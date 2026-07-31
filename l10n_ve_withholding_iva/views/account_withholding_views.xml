@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_withholding_form_iva" model="ir.ui.view">
+        <field name="name">account.withholding.form.iva</field>
+        <field name="model">account.withholding</field>
+        <field name="inherit_id" ref="l10n_ve_withholding.view_account_withholding_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='withholding_type']" position="after">
+                <field name="l10n_ve_iva_retention_rate" invisible="withholding_type != 'iva'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

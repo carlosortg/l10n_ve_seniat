@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_ut" name="Unidad Tributaria"
+              parent="l10n_ve_withholding.menu_l10n_ve_withholding_root"
+              action="action_ut" sequence="50"/>
+</odoo>
