@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_compliance_dashboard,l10n.ve.compliance.dashboard,model_l10n_ve_compliance_dashboard,account.group_account_invoice,1,1,1,1
+access_seniat_export_wizard,l10n.ve.seniat.export.wizard,model_l10n_ve_seniat_export_wizard,account.group_account_invoice,1,1,1,1

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_bcv_rate" name="Historico tasas BCV"
+              parent="account.menu_finance_entries" action="action_bcv_rate" sequence="55"/>
+</odoo>

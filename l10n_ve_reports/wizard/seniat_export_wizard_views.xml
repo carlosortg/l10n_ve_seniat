@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_seniat_export_wizard_form" model="ir.ui.view">
+        <field name="name">l10n.ve.seniat.export.wizard.form</field>
+        <field name="model">l10n.ve.seniat.export.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group invisible="state == 'done'">
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="export_type"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </group>
+                <group invisible="state != 'done'">
+                    <field name="file_name" invisible="1"/>
+                    <field name="file_data" filename="file_name"/>
+                </group>
+                <field name="state" invisible="1"/>
+                <footer>
+                    <button name="action_export" string="Exportar" type="object" class="btn-primary" invisible="state == 'done'"/>
+                    <button string="Cerrar" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_seniat_export_wizard" model="ir.actions.act_window">
+        <field name="name">Exportar retenciones SENIAT</field>
+        <field name="res_model">l10n.ve.seniat.export.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
