@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_l10n_ve_account" model="ir.ui.view">
+        <field name="name">res.company.form.l10n.ve.account</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="l10n_ve_iva_withholding_account_id"/>
+                <field name="l10n_ve_islr_withholding_account_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

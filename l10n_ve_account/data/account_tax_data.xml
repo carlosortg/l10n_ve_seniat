@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="tax_group_iva_ve" model="account.tax.group">
+        <field name="name">IVA Venezuela</field>
+        <field name="country_id" ref="base.ve"/>
+    </record>
+    <record id="tax_iva_16_sale" model="account.tax">
+        <field name="name">IVA 16% Ventas</field>
+        <field name="amount">16</field>
+        <field name="type_tax_use">sale</field>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_iva_ve"/>
+        <field name="country_id" ref="base.ve"/>
+    </record>
+    <record id="tax_iva_16_purchase" model="account.tax">
+        <field name="name">IVA 16% Compras</field>
+        <field name="amount">16</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_iva_ve"/>
+        <field name="country_id" ref="base.ve"/>
+    </record>
+    <record id="tax_iva_8_sale" model="account.tax">
+        <field name="name">IVA 8% Ventas</field>
+        <field name="amount">8</field>
+        <field name="type_tax_use">sale</field>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_iva_ve"/>
+        <field name="country_id" ref="base.ve"/>
+    </record>
+    <record id="tax_iva_8_purchase" model="account.tax">
+        <field name="name">IVA 8% Compras</field>
+        <field name="amount">8</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_iva_ve"/>
+        <field name="country_id" ref="base.ve"/>
+    </record>
+    <record id="tax_iva_0_sale" model="account.tax">
+        <field name="name">IVA 0% Exento Ventas</field>
+        <field name="amount">0</field>
+        <field name="type_tax_use">sale</field>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_iva_ve"/>
+        <field name="country_id" ref="base.ve"/>
+    </record>
+    <record id="tax_iva_0_purchase" model="account.tax">
+        <field name="name">IVA 0% Exento Compras</field>
+        <field name="amount">0</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_iva_ve"/>
+        <field name="country_id" ref="base.ve"/>
+    </record>
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_l10n_ve_bank_root" name="Bancos VE" parent="account.menu_finance" sequence="45"/>
+    <menuitem id="menu_bank_import" name="Importar extracto CSV" parent="menu_l10n_ve_bank_root"
+              action="action_bank_statement_import_ve" sequence="10"/>
+    <menuitem id="menu_payment_export" name="Exportar pagos masivos" parent="menu_l10n_ve_bank_root"
+              action="action_payment_batch_export" sequence="15"/>
+</odoo>

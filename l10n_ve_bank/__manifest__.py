@@ -1,11 +1,11 @@
 {
-    "name": "Venezuela - Integración Bancaria Local",
-    "version": "19.0.1.0.0",
+    "name": "Venezuela - Integracion Bancaria Local",
+    "version": "19.0.1.1.0",
     "category": "Accounting/Localizations",
-    "summary": "Bancos VE, cuentas, extractos CSV y referencias de pago locales",
+    "summary": "Bancos VE, extractos CSV y pagos masivos",
     "author": "Partner Oficial Odoo Venezuela",
     "license": "LGPL-3",
-    "depends": ["account", "l10n_ve_base", "l10n_ve_igtf"],
+    "depends": ["account", "l10n_ve_base"],
     "data": [
         "security/ir.model.access.csv",
         "data/res_bank_data.xml",
@@ -13,6 +13,7 @@
         "views/res_partner_bank_views.xml",
         "views/account_payment_views.xml",
         "wizard/bank_statement_import_views.xml",
+        "wizard/payment_batch_export_views.xml",
         "views/menu_views.xml",
     ],
     "installable": True,
