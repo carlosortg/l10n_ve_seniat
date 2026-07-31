@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Odoo 19: category_id fue reemplazado por privilege_id (res.groups.privilege) -->
-    <record id="module_category_l10n_ve_seniat" model="ir.module.category">
-        <field name="name">Localizacion Venezuela SENIAT</field>
-        <field name="sequence">25</field>
-    </record>
-
-    <record id="res_groups_privilege_seniat" model="res.groups.privilege">
-        <field name="name">SENIAT</field>
-        <field name="category_id" ref="module_category_l10n_ve_seniat"/>
-        <field name="sequence">10</field>
-    </record>
-
+    <!-- Odoo 19: no usar category_id en res.groups (eliminado). Grupo minimo. -->
     <record id="group_seniat_consulta" model="res.groups">
-        <field name="name">Consulta (solo lectura)</field>
-        <field name="sequence">10</field>
-        <field name="privilege_id" ref="res_groups_privilege_seniat"/>
-        <field name="comment">Acceso de solo lectura a retenciones y libros fiscales.</field>
+        <field name="name">SENIAT Consulta (solo lectura)</field>
     </record>
 </odoo>
