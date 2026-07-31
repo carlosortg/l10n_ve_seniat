@@ -7,10 +7,13 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
                 <page string="SENIAT" name="l10n_ve_seniat">
-                    <group>
+                    <group string="Facturacion fiscal">
                         <field name="l10n_ve_control_number_sequence_id"/>
                         <field name="l10n_ve_invoice_authorization"/>
-                        <button name="action_create_seniat_sequences" type="object" string="Crear secuencias SENIAT" class="btn-secondary"/>
+                        <field name="l10n_ve_lock_control_number"/>
+                        <field name="l10n_ve_require_nc_origin"/>
+                        <button name="action_create_seniat_sequences" type="object"
+                                string="Crear secuencias SENIAT" class="btn-primary"/>
                     </group>
                 </page>
             </xpath>

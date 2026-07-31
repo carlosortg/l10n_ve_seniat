@@ -7,8 +7,14 @@
         <field name="arch" type="xml">
             <xpath expr="//app[@name='account']" position="inside">
                 <block title="Facturacion fiscal Venezuela">
-                    <setting string="Secuencia numero de control SENIAT">
+                    <setting string="Secuencia numero de control">
                         <field name="l10n_ve_control_number_sequence_id"/>
+                    </setting>
+                    <setting string="Bloquear documentos con N de control">
+                        <field name="l10n_ve_lock_control_number"/>
+                    </setting>
+                    <setting string="NC exige documento origen">
+                        <field name="l10n_ve_require_nc_origin"/>
                     </setting>
                 </block>
             </xpath>

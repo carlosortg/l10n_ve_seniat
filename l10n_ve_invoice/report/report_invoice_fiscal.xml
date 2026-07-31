@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Placeholder: hereda reporte factura estandar; personalizar QWeb segun formato SENIAT -->
     <record id="report_invoice_document_l10n_ve" model="ir.ui.view">
         <field name="name">report.invoice.document.l10n.ve</field>
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@name='invoice_date']" position="after">
-                <div t-if="o.l10n_ve_control_number" class="mb-2">
+            <xpath expr="//div[hasclass('page')]" position="before">
+                <div t-if="o.l10n_ve_control_number" class="mb-2 text-end">
                     <strong>N de control:</strong>
                     <span t-field="o.l10n_ve_control_number"/>
+                    <t t-if="o.l10n_ve_invoice_number">
+                        <br/>
+                        <strong>N factura fiscal:</strong>
+                        <span t-field="o.l10n_ve_invoice_number"/>
+                    </t>
                 </div>
             </xpath>
         </field>

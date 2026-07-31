@@ -1,8 +1,8 @@
 {
     "name": "Venezuela - Facturacion Fiscal SENIAT",
-    "version": "19.0.1.1.0",
+    "version": "19.0.1.2.0",
     "category": "Accounting/Localizations",
-    "summary": "Numero de control y secuencias fiscales SENIAT",
+    "summary": "Numero de control, secuencias no_gap, NC/ND y validaciones fiscales",
     "author": "Partner Oficial Odoo Venezuela",
     "license": "LGPL-3",
     "depends": ["account", "l10n_ve_base"],
