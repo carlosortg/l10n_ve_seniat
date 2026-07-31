@@ -6,7 +6,7 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     l10n_ve_rif = fields.Char(
-        string="RIF de la Compañía",
+        string="RIF de la Compania",
         related="partner_id.l10n_ve_rif",
         readonly=False,
         store=True,
@@ -21,20 +21,19 @@ class ResCompany(models.Model):
         related="partner_id.l10n_ve_is_retention_agent",
         readonly=False,
         store=True,
-        string="Es Agente de Retención",
+        string="Es Agente de Retencion",
     )
     l10n_ve_economic_activity = fields.Char(
         related="partner_id.l10n_ve_economic_activity",
         readonly=False,
         store=True,
-        string="Actividad Económica",
+        string="Actividad Economica",
     )
     l10n_ve_control_number_sequence_id = fields.Many2one(
         "ir.sequence",
-        string="Secuencia Número de Control",
+        string="Secuencia Numero de Control",
         copy=False,
     )
     l10n_ve_invoice_authorization = fields.Char(
-        string="Autorización / Resolución de Facturación",
-        help="Número de resolución o autorización de facturación otorgada por el SENIAT (si aplica).",
+        string="Autorizacion / Resolucion de Facturacion",
     )

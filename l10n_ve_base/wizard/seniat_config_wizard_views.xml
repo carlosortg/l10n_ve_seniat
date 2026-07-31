@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_seniat_config_wizard_form" model="ir.ui.view">
+        <field name="name">l10n.ve.seniat.config.wizard.form</field>
+        <field name="model">l10n.ve.seniat.config.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Configuracion SENIAT">
+                <field name="state" invisible="1"/>
+                <field name="note" readonly="1"/>
+                <group invisible="state != 'company'">
+                    <field name="company_id"/>
+                    <field name="l10n_ve_rif"/>
+                    <field name="l10n_ve_taxpayer_type"/>
+                    <field name="l10n_ve_is_retention_agent"/>
+                </group>
+                <group invisible="state != 'sequences'">
+                    <field name="create_sequences"/>
+                </group>
+                <group invisible="state != 'accounts'">
+                    <p>Configure cuentas de retencion IVA/ISLR en Contabilidad si aplica.</p>
+                </group>
+                <group invisible="state != 'done'">
+                    <p>Configuracion inicial lista.</p>
+                </group>
+                <footer>
+                    <button name="action_back" string="Atras" type="object" invisible="state == 'company'"/>
+                    <button name="action_next" string="Siguiente" type="object" class="btn-primary" invisible="state == 'done'"/>
+                    <button name="action_close" string="Cerrar" type="object" class="btn-primary" invisible="state != 'done'"/>
+                    <button string="Cancelar" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_seniat_config_wizard" model="ir.actions.act_window">
+        <field name="name">Configuracion inicial SENIAT</field>
+        <field name="res_model">l10n.ve.seniat.config.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="menu_seniat_config_wizard" name="Configuracion inicial SENIAT"
+              parent="account.menu_finance_configuration" action="action_seniat_config_wizard" sequence="1"/>
+</odoo>
